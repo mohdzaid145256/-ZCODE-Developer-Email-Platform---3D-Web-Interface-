@@ -1,0 +1,6 @@
+/zcode-email-platform  
+  ├── index.html  
+  ├── style.css  
+  ├── gradient.png (if used)  
+  ├── README.md  
+  └── /assets (optional for images/fonts)  
