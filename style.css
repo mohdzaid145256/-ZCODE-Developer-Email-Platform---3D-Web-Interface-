@@ -1,0 +1,378 @@
+:root {
+    --primary-color: #5300a0;
+    --primary-light: #7f42a7;
+    --primary-dark: #330066;
+    --text-color: #e7e7e7;
+    --text-secondary: #a7a7a7;
+    --bg-color: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --border-color: #2a2a2a;
+    --transition-speed: 0.3s;
+    --font-main: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Background Elements */
+.background-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.image-gradient {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.layer-blur {
+    height: 0;
+    width: 30rem;
+    position: absolute;
+    top: 20%;
+    right: 0;
+    box-shadow: 0 0 700px 15px rgba(255, 255, 255, 0.1);
+    rotate: -30deg;
+    filter: blur(1px);
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, var(--primary-light), var(--primary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 0.1rem;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.main-nav a {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    transition: color var(--transition-speed) ease;
+    text-decoration: none;
+    color: var(--text-color);
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.main-nav a:hover {
+    color: var(--primary-light);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-light);
+    transition: width var(--transition-speed) ease;
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+/* Buttons */
+.btn-signing {
+    background-color: var(--text-secondary);
+    color: var(--bg-color);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+}
+
+.btn-signing:hover {
+    background-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: calc(100vh - 8rem);
+    padding: 2rem 0;
+}
+
+.content {
+    max-width: 48rem;
+    margin-left: 5%;
+    position: relative;
+}
+
+/* Tag Box */
+.tag-box {
+    position: relative;
+    width: 12rem;
+    height: 2.5rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, #656565, var(--primary-light), var(--primary-color), var(--primary-dark), #757575, #656565);
+    background-size: 200%;
+    animation: animationGradient 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(127, 66, 167, 0.3);
+    margin-bottom: 1.5rem;
+}
+
+@keyframes animationGradient {
+    to {
+        background-position: 200%;
+    }
+}
+
+.tag {
+    position: absolute;
+    inset: 2px;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    transition: color var(--transition-speed) ease;
+}
+
+.tag:hover {
+    color: var(--primary-light);
+}
+
+/* Typography */
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 1.5rem 0;
+    background: linear-gradient(90deg, var(--text-color), var(--text-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 38rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.btn-get-started {
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    padding: 0.9rem 1.8rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    transition: all var(--transition-speed) ease;
+    color: var(--text-color);
+}
+
+.btn-get-started:hover {
+    background-color: var(--bg-secondary);
+    border-color: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.btn-signing-main {
+    text-decoration: none;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.btn-signing-main:hover {
+    background-color: var(--text-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* 3D Model */
+.spline-container {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    width: 40vw;
+    max-width: 600px;
+    height: 40vw;
+    max-height: 600px;
+    z-index: 1;
+}
+
+.robot-3d {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .content {
+        margin-left: 0;
+        max-width: 42rem;
+    }
+    
+    .spline-container {
+        right: 0;
+        width: 45vw;
+        height: 45vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .content h1 {
+        font-size: 3rem;
+    }
+    
+    .spline-container {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        height: 60vw;
+        margin: 2rem auto;
+    }
+    
+    .main-content {
+        min-height: auto;
+        padding: 4rem 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        padding: 1.5rem 0;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .main-nav {
+        display: none;
+    }
+    
+    .content {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .tag-box {
+        margin: 0 auto 1.5rem;
+    }
+    
+    .content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .description {
+        font-size: 1.1rem;
+        margin: 0 auto 2rem;
+    }
+    
+    .buttons {
+        justify-content: center;
+    }
+    
+    .btn-get-started,
+    .btn-signing-main {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .content h1 {
+        font-size: 2rem;
+    }
+    
+    .description {
+        font-size: 1rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .btn-get-started,
+    .btn-signing-main {
+        width: 100%;
+        text-align: center;
+    }
+}
