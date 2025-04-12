@@ -3,7 +3,7 @@
 A modern landing page for a developer-focused email service, featuring **3D animations** (Spline), scroll-triggered effects (AOS.js), and responsive design.
 
 ## 🚀 Live Demo
-(https://mohdzaid145256.github.io/zcode-email-platform/)  
+(https://mohdzaid145256.github.io/ZCODE-Developer-Email-Platform-3D-Web-Interface/)  
 
 
 ## ✨ Features
